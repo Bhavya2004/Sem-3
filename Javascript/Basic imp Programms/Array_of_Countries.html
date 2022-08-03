@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array_of_Countries</title>
+</head>
+<body>
+    <script>
+        //WAP to create an array of countries,read values of a array from the user and print it
+
+        n=parseInt(prompt("Enter the size of an array"));
+        ar=new Array(n);
+
+        for(i=0;i<ar.length;i++)
+        {
+            ar[i]=prompt("Enter the name of any Country :");
+        }
+        for(i=0;i<ar.length;i++)
+        {
+            document.write(ar[i] + "<br/>");
+        }
+    </script>
+</body>
+</html>

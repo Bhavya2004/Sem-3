@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Separate Two Digits</title>
+</head>
+<body>
+    <script>
+        //Write a js to take 2 digit number and 
+        //then separate these two digits,
+        //then multiply 1st digit by itself for 2nd digit times
+
+        n1=parseInt(prompt("Enter a two digit number :"));
+        rem=1;
+        
+            rem=parseInt(n1%10);
+            n1=parseInt(n1/10);
+        
+        document.write("Answer :"+(n1**rem));
+
+    </script>
+</body>
+</html>

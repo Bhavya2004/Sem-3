@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Difference between var,let and const</title>
+</head>
+<body>
+	<script type="text/javascript">
+		//Scope of var is within the function only... 
+		// function f(){
+		// 	var a=20;
+		// 	console.log(a);
+		// }
+		// f();
+		// console.log(a);
+
+		//Scope of let is within the block....Always Use let....
+		// let a=10;
+		// function f(){
+		// 	let a=20;
+		// 	console.log(a);
+		// } 
+		// f();
+		// console.log(a);
+
+		//We can not assign a value to a constant variable
+		const a=10;
+		function f(){
+			a=9;
+			console.log(a);
+		}
+		f();
+	</script>
+</body>
+</html>

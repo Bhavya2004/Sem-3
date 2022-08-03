@@ -1,0 +1,142 @@
+create database Assignment
+select*from MST_City
+
+/*1. Select All
+CityID, CityName, Pincode, CityRemarks, StateID, StateName*/
+
+CREATE PROCEDURE PR_MST_City_SELECTALL
+AS 
+BEGIN
+	SELECT*FROM MST_City;
+END
+
+EXEC PR_MST_City_SELECTALL
+
+/*2. Insert*/
+CREATE PROCEDURE PR_City_INSERT
+@CityId int,
+@CityName varchar(250),
+@Pincode varchar(6),
+@StateId int,
+@CityRemarks varchar(500)
+
+AS
+BEGIN
+INSERT INTO MST_City(
+CityId,
+CityName,
+Pincode,
+StateId,
+CityRemarks)
+
+VALUES
+(
+@CityId,
+@CityName,
+@Pincode,
+@StateId,
+@CityRemarks
+)
+
+END
+
+EXEC PR_City_INSERT 6,'Baroda','360008',5,'good'
+
+/*3. Update*/
+CREATE PROCEDURE PR_CITY_UPDATE
+@CityId int,
+@CityName varchar(250),
+@Pincode varchar(6),
+@StateId int,
+@CityRemarks varchar(500)
+
+AS
+BEGIN
+UPDATE MST_City SET
+CityName=@CityName,
+Pincode=@Pincode, 
+StateId=@StateId,
+CityRemarks=@CityRemarks
+
+WHERE CityId=@CityId
+END
+
+EXEC PR_CITY_UPDATE 1,'jamnagar',300048,6,avg
+
+/*4.DELETE*/
+CREATE PROCEDURE PR_CITY_DELETE
+@CityId INT
+AS
+BEGIN
+DELETE FROM MST_City
+WHERE CityId=@CityId
+END
+
+EXEC PR_CITY_DELETE 1
+
+/*5.SELECTBYPK*/
+CREATE PROCEDURE PR_SELECTBYPK
+@CityId int
+AS
+BEGIN
+SELECT*FROM MST_City
+where CityId=@CityId
+End
+
+EXEC PR_SELECTBYPK 3
+
+/*6.SELECTBYPINCODESTARTWITH360*/
+CREATE PROCEDURE PR_SELECTBY_PINCODE
+AS
+BEGIN 
+SELECT*FROM MST_City
+WHERE Pincode like'360%'
+END
+
+EXEC PR_SELECTBY_PINCODE
+
+/*7.SELECTBYCITYNAMEPINCODE*/
+CREATE PROCEDURE PR_SELECTBY_CITYNAME_PINCODE
+@CityName varchar(250),
+@Pincode varchar(6)
+AS
+BEGIN
+SELECT*FROM MST_City
+WHERE CityName=@CityName AND Pincode=@Pincode
+END
+
+EXEC PR_SELECTBY_CITYNAME_PINCODE 'Ahmedabad','360006'
+
+/*8.SELECT BY CITY REMARKS*/
+CREATE PROCEDURE PR_CITY_SELECTBY_CITYREMARKS
+@CityRemarks varchar(500)
+AS
+BEGIN
+SELECT*FROM MST_City
+WHERE CityRemarks=@CityRemarks
+END
+
+EXEC PR_CITY_SELECTBY_CITYREMARKS 'GOOD'
+
+/*9. SELECT BY STATEID*/
+CREATE PROCEDURE PR_CITY_SELECTBY_STATEID
+@StateId int
+AS
+BEGIN
+SELECT*FROM MST_City
+WHERE StateId=@StateId
+END
+ 
+EXEC PR_CITY_SELECTBY_STATEID 3
+
+/*10. SELECT BY STATEID CITYID*/
+CREATE PROCEDURE PR_CITY_SELECTBY_STATEID_CITYID
+@CityId int,
+@StateId int
+AS
+BEGIN
+SELECT *FROM Mst_City 
+WHERE StateId=@StateId and CityId=@CityId
+END
+
+EXEC PR_CITY_SELECTBY_STATEID_CITYID 3,3

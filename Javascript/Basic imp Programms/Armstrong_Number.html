@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Armstrong Number</title>
+</head>
+<body>
+
+	<script type="text/javascript">
+
+		//write a program to check armstrong number for 3 digit.........
+		
+		n=parseInt(prompt("Enter your number:"));
+		temp=n;
+		sum=0;
+		while(n>0)
+		{
+			lastdigit=n%10;
+			sum=sum+lastdigit*lastdigit*lastdigit;
+			n=parseInt(n/10);
+		}
+		if(sum==temp)
+		{
+			document.write("Armstrong");
+		}
+		else
+		{
+			document.write("Not Armstrong");
+		}
+	</script>
+</body>
+</html>

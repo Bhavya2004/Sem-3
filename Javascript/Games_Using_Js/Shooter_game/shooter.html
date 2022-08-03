@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<title>Shooter_Game</title>
+</head>
+<body>
+	<div class="container">
+		<img src="bubble.png" id="bubble" style="height:50px" width="50px">
+	</div>
+	<h1>Score:<span id="counter">0</span></h1>
+	<h1>Level:<span id="levelcounter">1</span></h1>
+	<h1>Life:<span id="lifecounter">3</span></h1>
+
+	<script type="text/javascript">
+		let i=document.getElementById("bubble");
+		let score=document.getElementById("counter");
+		
+		let x=100;
+		let y=100;
+		let scorecount=0
+		let lifecount=document.getElementById("lifecounter");
+		let newScore=0;
+
+		function random(){
+			let x=parseInt(Math.random()*700);
+			let y=parseInt(Math.random()*500);
+			console.log(x);
+			console.log(y);
+			i.style.left=x+"px";
+			i.style.top=y+"px";
+		}
+		let first=setInterval(random,1500);
+
+		i.onclick=function(){
+			let temp=++scorecount;
+			score.innerHTML=temp;
+
+			if(newScore!=temp){
+				lifecount.innerHTML--;
+			}
+			if(temp==5){
+				clearInterval(first);
+				let second=setInterval(random,1000);
+				document.getElementById("levelcounter").innerHTML=2;
+			}
+			else if(temp==10){
+			 	clearInterval(first);
+				let third=setInterval(random,800);
+				document.getElementById("levelcounter").innerHTML=3;
+			}
+		}
+	</script>
+</body>
+</html>

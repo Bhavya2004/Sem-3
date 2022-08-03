@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Snake Game</title>
+
+	<style type="text/css">
+		#snakeimg {
+                width: 200px;
+                height: 200px;
+                position: absolute;
+                left: 500px;
+                top: 200px;
+            }
+           #foodimg
+           {
+				position: absolute;
+				top: 200px;
+				left: 300px;
+				height: 70px;
+				width: 70px;
+			}
+	</style>
+</head>
+<body  onload="foodlocation()" onkeydown="moveControl(event)">
+
+	<button id="leftbtn" onclick="startgoingleft()">Left</button>
+	<button id="rightbtn" onclick="startgoingright()">Right</button>
+	<button id="topbtn" onclick="startgoingup()">Up</button>
+	<button id="downbtn" onclick="startgoingdown()">Down</button>
+	<img src="Snake.png" id="snakeimg">
+	<img src="food.jpg" id="foodimg">
+
+	<script type="text/javascript">
+			var leftpos=500;
+			var clearleft=0;
+			var clearright=0;
+			var toppos=200;
+			var cleartop=0;
+			var cleardown=0;
+			var foodtop=0;
+			var foodleft=0;
+			
+			function startgoingleft(){
+				clearInterval(clearright);
+				clearInterval(cleartop);
+				clearleft=setInterval(goleft,10);
+			}
+			function goleft(){
+				leftpos--;
+				var i=document.getElementById("snakeimg");
+				i.style.left=leftpos+"px";
+			}
+			function startgoingright(){
+				clearInterval(clearleft);
+				clearInterval(cleartop);
+				clearInterval(cleardown);
+				clearright=setInterval(goright,10);
+			}
+			function goright(){
+				leftpos++;
+				var i=document.getElementById("snakeimg");
+				i.style.left=leftpos+"px";	
+			}
+			function startgoingup(){
+				clearInterval(clearleft);
+				clearInterval(clearright);
+				clearInterval(cleardown);
+				cleartop=setInterval(gotop,10);
+			}
+			function gotop(){
+				toppos--;
+				var i=document.getElementById("snakeimg");
+				i.style.top=toppos+"px";
+			}
+			function startgoingdown(){
+				clearInterval(clearleft);
+				clearInterval(clearright);
+				clearInterval(cleartop);
+				cleardown=setInterval(godown,10);
+			}
+			function godown(){
+				toppos++;
+				var i=document.getElementById("snakeimg");
+				i.style.top=toppos+"px";
+			}
+			
+			function moveControl(event){
+			if(event.keyCode==37){
+				startgoingleft();
+			}
+			else if(event.keyCode==38){
+				startgoingup();
+			}
+			else if(event.keyCode==39){
+				startgoingright();
+			}
+			else if(event.keyCode==40){
+				startgoingdown();
+			}
+  		}
+  		function foodlocation(){
+	var food=document.getElementById("foodimg");
+	foodTop=Math.random()*600+200;
+	foodLeft=Math.random()*600+450;
+	console.log(foodTop)
+		if(foodLeft<900 && foodTop<700){
+			food.style.top=foodTop+"px";
+			food.style.left=foodLeft+"px";
+		}
+		else{
+			foodlocation();
+		}
+		
+}
+	</script>
+</body>
+</html>

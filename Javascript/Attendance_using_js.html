@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Attendance</title>
+	<style type="text/css">
+		.tb{
+			height: 400px;
+			width: 850px;
+			border: 5px solid purple;
+		}
+	</style>
+</head>
+<body>
+	<button id="check" onclick="checkall()">Check All</button>
+	<button id="uncheck" onclick="uncheckall()">Uncheck All</button>
+	<br/>
+	<br/>	
+
+	<script type="text/javascript">
+		
+		var a=document.getElementsByName("box")
+		for(i=301;i<363 ;i++)
+		{
+			document.write("<input type='checkbox' name='box' onclick='result()' value='"+i+"'>"+i+" ")
+		}
+
+		function checkall()
+		{
+			for(i=0;i<a.length;i++)
+			{
+					a[i].checked=true;
+			}
+			document.getElementById("output").innerHTML = "Absent Number:";
+			
+		}
+		
+		function uncheckall()
+		{
+			for(i=0;i<a.length;i++)
+			{
+					a[i].checked=false;
+			}
+			result();
+
+		}
+
+		function result(){
+			op = document.getElementById("output");
+			op.innerHTML="Absent Number:";
+			for(i=0;i<a.length;i++){
+				if (a[i].checked == false) {
+					if (i==a.length-1) {
+						op.innerHTML = op.innerHTML + a[i].value;
+					}
+					else{
+						op.innerHTML = op.innerHTML + a[i].value + ",";
+					}
+				}
+			}
+		}
+	</script>
+	<br/>
+	<br/>
+	<textarea class="tb" id="output">Absent Number:</textarea>
+</body>
+</html>

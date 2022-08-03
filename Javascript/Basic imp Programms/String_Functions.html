@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String_Functions</title>
+</head>
+<body>
+    <script>
+        //WAP to demonstrate the use of various inbuilt string Functions......
+
+        //1.Strlen
+        str="My name is Bhavya Barai";
+        document.write(str.length);
+        
+        document.write("<br/>");
+        
+        //2.Substring
+        str1="My name is Bhavya Barai";
+        document.write(str1.substring(3,10));
+
+        document.write("<br/>");
+    
+        //3.substr
+        str2="My name is Bhavya Barai";
+        document.write(str2.substr(3,10));
+
+        document.write("<br/>");
+
+        //4.replace in string
+        str3="My name is Bhavya Barai";
+        document.write(str3.replace(" name","I am"));
+
+        document.write("<br/>");
+
+        //5.toUppercase
+        str4="My name is Bhavya Barai";
+        document.write(str4.toUpperCase());
+        
+        document.write("<br/>");
+
+        //6.toLowercase
+        str5="My name is Bhavya Barai";
+        document.write(str4.toLowerCase());
+        
+        document.write("<br/>");
+
+        //7.string concat
+        str6="My name is";
+        str7="Bhavya Barai";
+        document.write(str6.concat(str7));
+        
+        document.write("<br/>");
+
+        //8.trim(to remove space)
+        str8="    My name is Bhavya Barai    ";
+        document.write(str8.trim());
+        
+        document.write("<br/>");
+
+        //9.padding(padstart)
+        // str9="My name is Bhavya Barai";
+        // document.write(str9.);
+        
+        // document.write("<br/>");
+
+        //10.charAt()
+        str10="My name is Bhavya Barai";
+        document.write(str10.charAt(5));
+        
+        document.write("<br/>");
+
+        //11.charCodeAt() returns ASCII value 
+        str11="My name is Bhavya Barai";
+        document.write(str11.charCodeAt(4));
+        
+        document.write("<br/>");
+
+        //12.padding(padstart)
+        str12="6";
+        document.write(str12.padStart(5,"Bhavya"));
+        
+        document.write("<br/>");
+
+        //13.padding(padend)
+        str13="6";
+        document.write(str13.padEnd(5,"Bhavya"));
+        
+        document.write("<br/>");
+
+        //14.repeat
+        str14="My name is bhavya barai";
+        document.write(str14.repeat(2));
+        
+        document.write("<br/>");
+
+        //15.Indexof()
+        str15="My name is Bhavya Barai";
+        document.write(str15.indexOf("My"));
+        
+        document.write("<br/>");
+
+        document.write(str15.indexOf('B'));
+    </script>
+</body>
+</html>

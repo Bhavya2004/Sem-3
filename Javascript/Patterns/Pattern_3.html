@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Pyramid</title>
+</head>
+<body>
+
+	<script type="text/javascript">
+		
+		// Pattern 3 :
+			 //     *
+			 //    * *
+			 //   * * *
+			 //  * * * *
+			 // * * * * *
+
+			for(i=1;i<=5;i++)
+			{
+				for(j=1;j<=5-i;j++)
+				{
+					document.write("&nbsp");
+				}
+				for(k=0;k<i;k++)
+				{
+					document.write("*");
+				}
+				document.write("<br/>");
+			}
+	</script>
+
+</body>
+</html>

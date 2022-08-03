@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Occurence of vowel "a"</title>
+</head>
+<body>
+    <script>
+        //write an html file with js that finds the position of 1st occurence of vowel "a" and last occurence of vowel "a" in a given word and returns the string between them
+        
+        
+
+        let str = prompt("Enter a string");
+		let start = str.indexOf('a');
+		let end = str.lastIndexOf('a');
+		document.write("indexOf a from Start " + start + " <br/>");
+		document.write("indexOf a from end " +end + "<br/> ");
+		let str2 = str.substring(start+1,end);
+		document.write(str2);
+        
+    </script>
+</body>
+</html>

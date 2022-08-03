@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Palindrome Number</title>
+</head>
+<body>
+	<script type="text/javascript">
+	// write a program to check Palindrome number
+
+	n=parseInt(prompt("Enter your number"));
+
+	rev=0;
+
+	a=n;
+
+	while(n>0)
+	{
+		remainder=n%10;
+		rev=(rev*10)+remainder;
+		n=parseInt(n/10);
+	}
+	if(rev==a)
+	{
+		document.write("palindrome");
+	}
+	else
+	{
+			document.write("Not palindrome");	
+	}
+
+
+
+	</script>
+</body>
+</html>

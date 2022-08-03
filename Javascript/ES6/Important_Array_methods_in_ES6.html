@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Array_methods</title>
+</head>
+<body>
+	<script type="text/javascript">
+		//List of some important Array_Methods:
+		// includes
+		// find
+		// some 
+		// every
+		// filter
+		// foreach
+		// reduce
+		// map
+
+		//1>Includes
+		// students=["arjun","rajkot","gujarat","india"];
+		// console.log(students.includes("arjun"));	//it checks if arjun is present and then it will return true
+
+		//2>find
+    	// var array = [10, 20, 30, 40, 50];
+    	// var found = array.find(function (element) {
+     	// return element > 20;
+    	// });
+    	// console.log(found);
+
+    	//3>Some
+    	// var array = [10, 20, 30, 40, 50];
+    	// var found = array.some(function (element) {	 //checks whether at least one of the elements of the array satisfies the condition
+     // 	return element > 200;
+    	// });
+    	// console.log(found);
+
+    	//4>Every
+    	// var array = [10, 20, 30, 40, 50];
+    	// var found = array.every(function (element) {	//checks whether every element of array satisfies the condition
+    	// 	return element <60;
+    	// });
+    	// console.log(found);
+
+    	//5>Filter
+		// let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+		// let result = numbers.filter(number => number > 5);	 //creates a new array with elements that follow or pass the given criteria and condition
+		// console.log(result);
+
+		//6>Foreach
+		// students=
+		// 	[
+		// 	{city:"rajkot",name:"arjun",spi:5.8},
+		// 	{city:"morbi",name:"bala",spi:6.8},
+		// 	{city:"jamnagar",name:"bhavya",spi:7.8}
+		// 	]
+		// students.forEach((stu)=>{console.log(stu.name)});
+
+		//7>reduce
+
+		//8>map
+		// students=
+		// 	[
+		// 	{city:"rajkot",name:"arjun",spi:5.8},
+		// 	{city:"morbi",name:"bala",spi:6.8},
+		// 	{city:"jamnagar",name:"bhavya",spi:7.8}
+		// 	]
+		// formattedstudents=students.map((stu)=>{
+		// 	return "<li>"+ stu.name +"</li>"
+		// })
+		// document.write("<ul>");
+		// document.write(formattedstudents);
+		// document.write("</ul>");
+	</script>
+</body>
+</html>
